@@ -231,6 +231,7 @@ FEATURES
 
 .books {
     display: flex; /* the books are side by side */
+    flex-wrap: wrap;
 }
 
 .book {
@@ -275,3 +276,9 @@ FEATURES
     padding-right: 6px; /* create space between normal price and discounted price */
     color: #bfbfbf;
 }
+
+/* 
+
+RECENT 
+
+*/
