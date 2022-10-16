@@ -27,7 +27,7 @@ img {
     /* this does not affect the image in the nav because even though .logo is hard-coded, it is a class which has a higher specificity/priority */
     height: 100%;
     max-height: 50vh; /* makes the image smaller; max height will be 50% of the page's height */
-    padding: 20px;  
+    /* padding: 20px;   */
 }
 
 .nav__container {
@@ -159,32 +159,27 @@ HIGHLIGHTS
     max-width: 100vw;
 }
 
-#highlights:before {
+#highlights:after,
+#highlights:before  {
     background: url('assets/wave.svg'); /* picture of a wave is set to the background */
     content: ""; /* need this to display */
     position: absolute; /* the parent, #highlights, needs to be position relative */
     width: 101vw;
     height: 12vw; /* this height gets bigger the wider the screen gets */ 
-    top: 1px;
     left: 0;
     z-index: 1;
     background-size: cover; /* 1/2 spans the whole width of the page */
     background-repeat: no-repeat; /* 2/2 all the way to the left and right of the page */
+}
+
+#highlights:before {
     transform: translateY(-100%); /* move the wave up where we need it */
+    top: 1px;
 }
 
 #highlights::after {
-    background: url('assets/wave.svg'); /* picture of a wave is set to the background */
-    content: ""; /* need this to display */
-    position: absolute; /* the parent, #highlights, needs to be position relative */
-    width: 101vw;
-    height: 12vw; /* this height gets bigger the wider the screen gets */ 
-    bottom: 1px;
-    left: 0;
-    z-index: 1;
-    background-size: cover;
-    background-repeat: no-repeat; /* all the way to the left and right of the page */
     transform: translateY(100%) rotate(180deg); /* move the wave up where we need it and then flip it */ 
+    bottom: 1px;
 }
 
 .highlight__wrapper {
@@ -230,6 +225,53 @@ FEATURES
 */
 
 #features {
-    height: 1000px;
+    padding-top: 8vw; /* makes space from the waves onto the features section, needs to be vw because of the others are based off vw too */
     background-color: rgba(115, 66, 214, 0.1);
+}
+
+.books {
+    display: flex; /* the books are side by side */
+}
+
+.book {
+    width: 25%; /* each book takes up 1/4 of the row */
+    padding: 24px; /* adding space between each book */
+}
+
+.book__img {
+    max-height: 380px;
+    transition: all 300ms ease; /* ease the transformation in .book:hover */
+    cursor: not-allowed; /* makes the cursor into a non clickable icon */
+}
+
+.book__img--wrapper {
+    margin-bottom: 8px; /* creates space between book image and title */
+    border-radius: 4px; /* make the image have curved edges */
+    overflow: hidden; /* to actually see the curve */
+    display: flex; /* so the image doesn't come out of the figure; remove the gap between the figure and the image */
+}
+
+.book:hover .book__img {
+    transform: scale(1.03); /* when hovering over the book, we want the image to increase by 3% */
+}
+
+.book__title {
+    font-size: 20px;
+    margin-bottom: 8px; /* create space between title and stars */
+}
+
+.book__title:hover {
+    text-decoration: underline; /* underlines the book title when mouse is over it */
+    cursor: not-allowed; /* makes a non-clickable symbol */
+}
+
+.book__ratings {
+    margin-bottom: 8px; /* create space between the stars and the price  */
+    color: #fabf2a;
+}
+
+.book__price--normal {
+    text-decoration: line-through; /* puts a line through the normal price */
+    padding-right: 6px; /* create space between normal price and discounted price */
+    color: #bfbfbf;
 }
