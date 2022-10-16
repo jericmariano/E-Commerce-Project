@@ -7,6 +7,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* smooth scrolling visual */
+}
+
 body {
     /* to make sure the wave fills up the whole page */
     max-width: 100vw;
@@ -20,6 +24,14 @@ nav {
 
 p {
     line-height: 1.5; /* create more space between the lines */
+}
+
+a {
+    text-decoration: none; /* removes the underlines */
+}
+
+a:hover {
+    text-decoration: underline; /* add underline on hover */
 }
 
 img {
@@ -146,6 +158,16 @@ button:active {
     width: 100%;
     max-width: 1200px; /* capping the width so it doesn't stretch all the way to the ends on a big screen */
     margin: 0 auto; /* center it horizontally */
+}
+
+.row__column {
+    display: flex;
+    flex-direction: column; /* to center the button in the explore page */
+    align-items: center;
+}
+
+.no-cursor {
+    cursor: not-allowed;
 }
 
 /*
@@ -287,8 +309,34 @@ EXPLORE
     background-color: rgba(115, 66, 214, 0.1);
 }
 
-.explore__row {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* 
+
+FOOTER 
+
+*/
+
+footer {
+    background-color: #242424;
+}
+
+.footer__logo {
+    display: flex; /* fix the figure having a bigger height than the image */
+}
+
+.footer__logo--img {
+    width: 160px;
+    filter: grayscale(1) invert(1); /* grayscale turns it into dark colors and then inverts it to white */
+}
+
+.footer__link,
+.footer__copyright {
+    color: #fff;
+}
+
+.footer__list {
+    margin: 20px 0 24px 0; /* creates space between links and copyright; also makes it more even */
+}
+
+.footer__link {
+    padding: 0 8px; /* create space between each link */
 }
