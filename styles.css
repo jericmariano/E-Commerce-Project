@@ -12,6 +12,14 @@ nav {
     display: flex;
 }
 
+img {
+    width: 100%; /* want all images to be 100% of its parent */
+    /* this does not affect the image in the nav because even though .logo is hard-coded, it is a class which has a higher specificity/priority */
+    height: 100%;
+    max-height: 50vh; /* makes the image smaller; max height will be 50% of the page's height */
+    padding: 20px;  
+}
+
 .nav__container {
     width: 100%; /* take up the full space of the parent */
     display: flex;
@@ -20,6 +28,10 @@ nav {
     justify-content: space-between; /* send the children to both ends of the container */
     align-items: center;
     margin: 0 auto; /* center the children */
+}
+
+.purple {
+    color: #7342d6; /* makes any text wrapped around the span of this class a purple color */
 }
 
 .logo {
@@ -54,4 +66,63 @@ li {
 
 .nav__link--primary:hover {
     text-decoration: none; /* doesn't underline the book element */
+}
+
+#landing {
+    background-color: rgba(115, 66, 214, 0.1);
+}
+
+header {
+    height: calc(100vh - 80px); /* makes the height the rest of the page; 80px is the height of the nav */
+}
+
+.header__container {
+    width: 100%; /* span the whole width of the page */
+    max-width: 720px; /* cap the width of the container */
+    margin: 0 auto; /* center the container to the header */
+    height: 100%; /* make the height of the container span the rest of the parent */
+    display: flex; /* puts the text and the image side by side 1/2 */
+    flex-direction: column; /* puts the text over the image 2/2 */ 
+    justify-content: space-around; /* creates space vertically (because of flex-direction column) for the children */
+}
+
+.header__description {
+    display: flex; /* children of the header are side by side */
+    flex-direction: column; /* children are now on top of each other */
+    align-items: center; /* bring button to the middle */
+}
+
+h1 {
+    font-size: 56px;
+    color: #7342d6;
+    margin-bottom: 24px; /* creates space between h1 and h2 */
+    text-align: center; /* centers the h1 */
+}
+
+h2 {
+    text-align: center; 
+    font-size: 32px;
+    margin-bottom: 32px; /* creates space between h2 and the image */
+
+}
+
+button {
+    cursor: pointer; /* targeting all the buttons, the cursor changes when hovering over it */
+}
+
+button:active {
+    transform: translateY(1px); /* move the button down one pixel when clicked */
+}
+
+.btn {
+    background: #7342d6;
+    color: white;
+    padding: 12px 24px; /* create space between text and border of the button */
+    font-size: 20px;
+    border-radius: 4px; /* curve the edges */
+    border: none; /* remove the border (the black outline) */
+}
+
+.header__img--wrapper {
+    padding: 20px; /* makes it a bit smaller and when resizing the screen, the image won't touch the sides */
 }
